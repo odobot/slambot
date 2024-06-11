@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot name="slambot"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find slambot)/urdf/materials.xacro" />
+  <xacro:include filename="$(find slambot)/urdf/slambot.trans" />
+  <xacro:include filename="$(find slambot)/urdf/slambot_core.xacro" />
+  <xacro:include filename="$(find slambot)/urdf/lidar.xacro"/>
+  <!-- <xacro:include filename="$(find slambot)/urdf/gazebo_control.xacro"/> -->
+  
+</robot>

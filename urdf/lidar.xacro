@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot_name">
+
+    <joint name="Rigid 15" type="fixed">
+        <origin xyz="-0.103 0.115 0.005" rpy="0 0 0"/>
+        <parent link="Top_v1_1"/>
+        <child link="lidar_v3_1"/>
+    </joint>
+
+    <link name="lidar_v3_1">
+        <inertial>
+            <origin xyz="0.028092059363177907 0.034768028407563094 0.03531235201419237" rpy="0 0 0"/>
+            <mass value="1.3367192183542058"/>
+            <inertia ixx="0.000962" iyy="0.000615" izz="0.001101" ixy="1e-06" iyz="0.000159" ixz="3e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.014083 -0.026915 -0.058998" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://slambot/meshes/lidar_v3_1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="opaque202209238"/>
+        </visual>
+        <collision>
+            <origin xyz="0.014083 -0.026915 -0.058998" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://slambot/meshes/lidar_v3_1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference ="lidar_v3_1">
+        <material>Gazebo/Red</material>
+        <sensor name="laser" type="ray">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-3.14</min_angle>
+                        <max_angle>3.14</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.3</min>
+                    <max>12</max>
+                    <resolution>0.01</resolution>
+                </range>
+            </ray>
+            <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <argument>--ros-args --remap ~/out:=scan</argument>
+                </ros>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>laser_frame</frame_name>
+
+            </plugin>
+        </sensor>
+    </gazebo>
+
+</robot>

@@ -1,0 +1,578 @@
+<?xml version="1.0" ?>
+<robot name="slambot"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- <xacro:macro name="gazebo_description" params="link">
+    <gazebo reference="${link}">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <self_collide>true</self_collide>
+      <gravity>true</gravity>
+    </gazebo>
+  </xacro:macro> -->
+
+  <link name="base_link"/>
+
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_plate"/>
+    <origin xyz="-0.015 0.0 0.065" rpy="0.0 0.0 0.0"/>
+  </joint>
+  
+  <link name="base_plate">
+    <inertial>
+      <origin xyz="0.01391797600065852 0.0025201482451975756 -2.0442042102314374e-06" rpy="0 0 0"/>
+      <mass value="1.4774483657474122"/>
+      <inertia ixx="0.006202" iyy="0.003183" izz="0.009377" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="base_plate"/> -->
+
+  <link name="Top2BottomSupport_v1_1">
+    <inertial>
+      <origin xyz="1.3013627712943343e-07 8.593194737727128e-08 0.025499955795789783" rpy="0 0 0"/>
+      <mass value="0.02507612383861471"/>
+      <inertia ixx="6e-06" iyy="6e-06" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.061083 0.088085 -0.002998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Top2BottomSupport_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="0.061083 0.088085 -0.002998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Top2BottomSupport_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="Top2BottomSupport_v1_1"/> -->
+
+  <link name="Top2BottomSupport_v1_2">
+    <inertial>
+      <origin xyz="1.301362773931114e-07 8.593194740502685e-08 0.025499955795789828" rpy="0 0 0"/>
+      <mass value="0.02507612383861471"/>
+      <inertia ixx="6e-06" iyy="6e-06" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.088917 0.088085 -0.002998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Top2BottomSupport_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.088917 0.088085 -0.002998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Top2BottomSupport_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="Top2BottomSupport_v1_2"/> -->
+
+  <link name="Top2BottomSupport_v1_3">
+    <inertial>
+      <origin xyz="1.3013627726127242e-07 8.59319475854381e-08 0.025499955795789772" rpy="0 0 0"/>
+      <mass value="0.02507612383861471"/>
+      <inertia ixx="6e-06" iyy="6e-06" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.036417 -0.126915 -0.002998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Top2BottomSupport_v1_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.036417 -0.126915 -0.002998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Top2BottomSupport_v1_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="Top2BottomSupport_v1_3"/> -->
+
+  <link name="Top2BottomSupport_v1_4">
+    <inertial>
+      <origin xyz="1.301362771936182e-07 8.593194761319367e-08 0.02549995579578978" rpy="0 0 0"/>
+      <mass value="0.02507612383861471"/>
+      <inertia ixx="6e-06" iyy="6e-06" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.008583 -0.126915 -0.002998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Top2BottomSupport_v1_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="0.008583 -0.126915 -0.002998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Top2BottomSupport_v1_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="Top2BottomSupport_v1_4"/> -->
+
+  <link name="Top_v1_1">
+    <inertial>
+      <origin xyz="-0.07499986986458532 0.09373669057270555 0.0024999557957898974" rpy="0 0 0"/>
+      <mass value="1.2752313778105713"/>
+      <inertia ixx="0.005431" iyy="0.002741" izz="0.008166" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.088917 0.088085 -0.053998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Top_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.088917 0.088085 -0.053998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Top_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="Top_v1_1"/> -->
+
+  <link name="20V_Battery_Holder_v1_1">
+    <inertial>
+      <origin xyz="-0.019999869863722687 0.004407712955136665 -0.006831935243810296" rpy="0 0 0"/>
+      <mass value="0.321635351867721"/>
+      <inertia ixx="0.000162" iyy="0.000166" izz="0.000308" ixy="-0.0" iyz="1.1e-05" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.033917 0.048085 -0.053998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/20V_Battery_Holder_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.033917 0.048085 -0.053998" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/20V_Battery_Holder_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="20V_Battery_Holder_v1_1"/> -->
+
+  <link name="Motor_Bracket_v1_1">
+    <inertial>
+      <origin xyz="-0.01556040527634383 -0.007999914067948213 -0.00893696164387701" rpy="0 0 0"/>
+      <mass value="0.03464403888733107"/>
+      <inertia ixx="5e-06" iyy="7e-06" izz="6e-06" ixy="-0.0" iyz="-0.0" ixz="-2e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.053583 0.050085 0.003002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Motor_Bracket_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="0.053583 0.050085 0.003002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Motor_Bracket_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="Motor_Bracket_v1_1"/> -->
+
+  <link name="Motor_Bracket_v1_2">
+    <inertial>
+      <origin xyz="0.0015606655488983323 0.008000085932082235 -0.008936961643876924" rpy="0 0 0"/>
+      <mass value="0.03464403888733107"/>
+      <inertia ixx="5e-06" iyy="7e-06" izz="6e-06" ixy="-0.0" iyz="0.0" ixz="2e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.095417 0.066085 0.003002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Motor_Bracket_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.095417 0.066085 0.003002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Motor_Bracket_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="Motor_Bracket_v1_2"/> -->
+
+  <link name="Motor_GM25-370_v1_1">
+    <inertial>
+      <origin xyz="-0.028764245480029094 0.0002766909263226952 -3.8301681753311057e-08" rpy="0 0 0"/>
+      <mass value="0.2121635375755772"/>
+      <inertia ixx="1.6e-05" iyy="6.7e-05" izz="6.8e-05" ixy="2e-06" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.103117 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Motor_GM25-370_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.103117 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Motor_GM25-370_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="Motor_GM25-370_v1_1"/> -->
+
+  <link name="Motor_GM25-370_v1_2">
+    <inertial>
+      <origin xyz="0.02876450575258374 0.0002766909263227299 -5.0106738848365584e-08" rpy="0 0 0"/>
+      <mass value="0.2121635375755772"/>
+      <inertia ixx="1.6e-05" iyy="6.7e-05" izz="6.8e-05" ixy="-2e-06" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.075283 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Motor_GM25-370_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="0.075283 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Motor_GM25-370_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="Motor_GM25-370_v1_2"/> -->
+
+  <link name="CastorWheel_Socks_v1_1">
+    <inertial>
+      <origin xyz="-0.014499869863701872 -0.011999914067933007 -0.014100044204210219" rpy="0 0 0"/>
+      <mass value="0.15964574543773122"/>
+      <inertia ixx="2.9e-05" iyy="2.8e-05" izz="3.6e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.081917 -0.096915 0.003002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/CastorWheel_Socks_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.081917 -0.096915 0.003002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/CastorWheel_Socks_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="CastorWheel_Socks_v1_1"/> -->
+
+  <link name="CastorWheel_Socks_v1_2">
+    <inertial>
+      <origin xyz="0.014500130136297869 -0.011999914067932882 -0.014100044204210275" rpy="0 0 0"/>
+      <mass value="0.15964574543773122"/>
+      <inertia ixx="2.9e-05" iyy="2.8e-05" izz="3.6e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.054083 -0.096915 0.003002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/CastorWheel_Socks_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="0.054083 -0.096915 0.003002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/CastorWheel_Socks_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="CastorWheel_Socks_v1_2"/> -->
+
+  <link name="Caster-swivel-40mmzzzzzzzzz_assembly_v1_1">
+    <inertial>
+      <origin xyz="-0.015108292284186184 0.001305021106499396 -0.018397572068353046" rpy="0 0 0"/>
+      <mass value="0.07682448436184783"/>
+      <inertia ixx="1.8e-05" iyy="1.3e-05" izz="1.1e-05" ixy="-0.0" iyz="-5e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.081917 -0.072915 0.031202" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Caster-swivel-40mmzzzzzzzzz_assembly_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.081917 -0.072915 0.031202" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Caster-swivel-40mmzzzzzzzzz_assembly_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="Caster-swivel-40mmzzzzzzzzz_assembly_v1_1"/> -->
+
+  <link name="Caster-swivel-40mmzzzzzzzzz_assembly_v1_2">
+    <inertial>
+      <origin xyz="0.014891707715813496 -0.022694978893500528 -0.01839757206835258" rpy="0 0 0"/>
+      <mass value="0.07682448436184783"/>
+      <inertia ixx="1.8e-05" iyy="1.3e-05" izz="1.1e-05" ixy="-0.0" iyz="-5e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.054083 -0.096915 0.031202" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Caster-swivel-40mmzzzzzzzzz_assembly_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="0.054083 -0.096915 0.031202" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/Caster-swivel-40mmzzzzzzzzz_assembly_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="Caster-swivel-40mmzzzzzzzzz_assembly_v1_2"/> -->
+
+  <link name="RC_coupling_v1_1">
+    <inertial>
+      <origin xyz="0.009138590707246208 2.481337805643191e-07 -0.0001077765571487442" rpy="0 0 0"/>
+      <mass value="0.014240892136405786"/>
+      <inertia ixx="0.0" iyy="1e-06" izz="1e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.110367 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/RC_coupling_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.110367 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/RC_coupling_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="RC_coupling_v1_1"/> -->
+
+  <link name="RC_coupling_v1_2">
+    <inertial>
+      <origin xyz="-0.00913833043469188 -7.626964643875356e-08 -0.0001077765571489836" rpy="0 0 0"/>
+      <mass value="0.014240892136405786"/>
+      <inertia ixx="0.0" iyy="1e-06" izz="1e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.082533 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/RC_coupling_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="0.082533 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/RC_coupling_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="RC_coupling_v1_2"/> -->
+
+  <link name="85mm_Wheel_v1_1">
+    <inertial>
+      <origin xyz="0.002469027545212818 7.802479903840087e-08 -1.140744380033476e-07" rpy="0 0 0"/>
+      <mass value="0.7458827679602694"/>
+      <inertia ixx="0.000848" iyy="0.00047" izz="0.00047" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.100283 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/85mm_Wheel_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="0.100283 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/85mm_Wheel_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="85mm_Wheel_v1_1"/> -->
+
+  <link name="85mm_Wheel_v1_2">
+    <inertial>
+      <origin xyz="-0.0024687672726584897 2.9376309024220504e-08 -8.598721887298488e-08" rpy="0 0 0"/>
+      <mass value="0.7458827679602694"/>
+      <inertia ixx="0.000848" iyy="0.00047" izz="0.00047" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.128117 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/85mm_Wheel_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="opaque202209238"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.128117 0.058085 0.024002" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slambot/meshes/85mm_Wheel_v1_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <xacro:gazebo_description link="85mm_Wheel_v1_2"/> -->
+
+  <joint name="Rigid 1" type="fixed">
+    <origin xyz="-0.061083 -0.088085 0.002998" rpy="0 0 0"/>
+    <parent link="base_plate"/>
+    <child link="Top2BottomSupport_v1_1"/>
+  </joint>
+
+  <joint name="Rigid 2" type="fixed">
+    <origin xyz="0.088917 -0.088085 0.002998" rpy="0 0 0"/>
+    <parent link="base_plate"/>
+    <child link="Top2BottomSupport_v1_2"/>
+  </joint>
+
+  <joint name="Rigid 3" type="fixed">
+    <origin xyz="0.036417 0.126915 0.002998" rpy="0 0 0"/>
+    <parent link="base_plate"/>
+    <child link="Top2BottomSupport_v1_3"/>
+  </joint>
+
+  <joint name="Rigid 4" type="fixed">
+    <origin xyz="-0.008583 0.126915 0.002998" rpy="0 0 0"/>
+    <parent link="base_plate"/>
+    <child link="Top2BottomSupport_v1_4"/>
+  </joint>
+
+  <joint name="Rigid 5" type="fixed">
+    <origin xyz="0.0 0.0 0.051" rpy="0 0 0"/>
+    <parent link="Top2BottomSupport_v1_2"/>
+    <child link="Top_v1_1"/>
+  </joint>
+
+  <joint name="Rigid 6" type="fixed">
+    <origin xyz="-0.055 0.04 0.0" rpy="0 0 0"/>
+    <parent link="Top_v1_1"/>
+    <child link="20V_Battery_Holder_v1_1"/>
+  </joint>
+
+  <joint name="Rigid 7" type="fixed">
+    <origin xyz="-0.053583 -0.050085 -0.003002" rpy="0 0 0"/>
+    <parent link="base_plate"/>
+    <child link="Motor_Bracket_v1_1"/>
+  </joint>
+
+  <joint name="Rigid 8" type="fixed">
+    <origin xyz="0.095417 -0.066085 -0.003002" rpy="0 0 0"/>
+    <parent link="base_plate"/>
+    <child link="Motor_Bracket_v1_2"/>
+  </joint>
+
+  <joint name="Rigid 9" type="fixed">
+    <origin xyz="0.0077 0.008 -0.021" rpy="0 0 0"/>
+    <parent link="Motor_Bracket_v1_2"/>
+    <child link="Motor_GM25-370_v1_1"/>
+  </joint>
+
+  <joint name="Rigid 10" type="fixed">
+    <origin xyz="-0.0217 -0.008 -0.021" rpy="0 0 0"/>
+    <parent link="Motor_Bracket_v1_1"/>
+    <child link="Motor_GM25-370_v1_2"/>
+  </joint>
+
+  <joint name="Rigid 11" type="fixed">
+    <origin xyz="0.081917 0.096915 -0.003002" rpy="0 0 0"/>
+    <parent link="base_plate"/>
+    <child link="CastorWheel_Socks_v1_1"/>
+  </joint>
+
+  <joint name="Rigid 12" type="fixed">
+    <origin xyz="-0.054083 0.096915 -0.003002" rpy="0 0 0"/>
+    <parent link="base_plate"/>
+    <child link="CastorWheel_Socks_v1_2"/>
+  </joint>
+
+  <joint name="Rigid 13" type="fixed">
+    <origin xyz="0.0 -0.024 -0.0282" rpy="0 0 0"/>
+    <parent link="CastorWheel_Socks_v1_1"/>
+    <child link="Caster-swivel-40mmzzzzzzzzz_assembly_v1_1"/>
+  </joint>
+
+  <joint name="Rigid 14" type="fixed">
+    <origin xyz="0.0 0.0 -0.0282" rpy="0 0 0"/>
+    <parent link="CastorWheel_Socks_v1_2"/>
+    <child link="Caster-swivel-40mmzzzzzzzzz_assembly_v1_2"/>
+  </joint>
+
+  <joint name="Revolute 16" type="continuous">
+    <origin xyz="0.00725 0.0 0.0" rpy="0 0 0"/>
+    <parent link="Motor_GM25-370_v1_1"/>
+    <child link="RC_coupling_v1_1"/>
+    <axis xyz="1.0 -0.0 0.0"/>
+  </joint>
+
+  <joint name="Revolute 17" type="continuous">
+    <origin xyz="-0.00725 0.0 0.0" rpy="0 0 0"/>
+    <parent link="Motor_GM25-370_v1_2"/>
+    <child link="RC_coupling_v1_2"/>
+    <axis xyz="-1.0 -0.0 0.0"/>
+  </joint>
+
+  <joint name="Rigid 18" type="fixed">
+    <origin xyz="-0.01775 0.0 0.0" rpy="0 0 0"/>
+    <parent link="RC_coupling_v1_2"/>
+    <child link="85mm_Wheel_v1_1"/>
+  </joint>
+
+  <joint name="Rigid 19" type="fixed">
+    <origin xyz="0.01775 0.0 0.0" rpy="0 0 0"/>
+    <parent link="RC_coupling_v1_1"/>
+    <child link="85mm_Wheel_v1_2"/>
+  </joint>
+
+</robot>
