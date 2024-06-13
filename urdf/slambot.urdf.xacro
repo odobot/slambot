@@ -6,6 +6,6 @@
   <xacro:include filename="$(find slambot)/urdf/slambot.trans" />
   <xacro:include filename="$(find slambot)/urdf/slambot_core.xacro" />
   <xacro:include filename="$(find slambot)/urdf/lidar.xacro"/>
-  <!-- <xacro:include filename="$(find slambot)/urdf/gazebo_control.xacro"/> -->
+  <xacro:include filename="$(find slambot)/urdf/gazebo_control.xacro"/>
   
 </robot>

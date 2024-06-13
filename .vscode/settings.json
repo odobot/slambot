@@ -1,0 +1,16 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/cheech/ws_moveit2/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages",
+        "/home/cheech/ws_moveit2/install/moveit_py/local/lib/python3.10/dist-packages",
+        "/home/cheech/ws_moveit2/install/moveit_msgs/local/lib/python3.10/dist-packages",
+        "/home/cheech/ws_moveit2/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/home/cheech/Desktop/Workspace/Raspberry/install/rasp/lib/python3.10/site-packages",
+        "/home/cheech/Desktop/Workspace/Ruumba/build/trial",
+        "/home/cheech/Desktop/Workspace/Ruumba/install/trial/lib/python3.10/site-packages",
+        "/home/cheech/Desktop/Workspace/AGV/build/hello_world",
+        "/home/cheech/Desktop/Workspace/AGV/install/hello_world/lib/python3.10/site-packages",
+        "/home/cheech/Desktop/Workspace/AGV/install/Hello_world/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

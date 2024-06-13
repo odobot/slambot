@@ -18,8 +18,8 @@ diff_cont:
 
     left_wheel_names: ['Revolute 17']
     right_wheel_names: ['Revolute 16']
-    wheel_separation: 0.35
-    wheel_radius: 0.05
+    wheel_separation: 0.194
+    wheel_radius: 0.0425
 
     use_stamped_vel: false
 
