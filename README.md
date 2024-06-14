@@ -24,9 +24,6 @@ You need to have installed:
    ```console
    sudo apt install python3-colcon-common-extensions
    ```
-5. moveit:
-
-   [moveit installtion](https://moveit.ros.org/install-moveit2/source/)
 ## :hammer: Design
 The design was made in fusion360 and used a [fusion2urdf](https://github.com/SpaceMaster85/fusion2urdf) exporter to obtain the urdf files needed 
 ## :hammer: How to build
@@ -72,8 +69,9 @@ Second terminal
  ```console
   rviz2
   ```
-In rviz for the Fixed frame use `base_link` add RobotModel at the Displays under the robot model there is Description topic add `/robot_description`
-third terminal
+In rviz for the Fixed frame use `base_link` add RobotModel at the Displays under the robot model there is Description topic add `/robot_description`.
+
+Third terminal
  ```console
   ros2 run joint_state_publisher_gui joint_state_publisher_gui
  ```
