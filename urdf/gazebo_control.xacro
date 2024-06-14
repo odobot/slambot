@@ -7,8 +7,8 @@
             <!-- Wheel Information -->
             <left_joint>Revolute 17</left_joint>
             <right_joint>Revolute 16</right_joint>
-            <wheel_separation>0.35</wheel_separation>
-            <wheel_diameter>0.1</wheel_diameter>
+            <wheel_separation>0.194</wheel_separation>
+            <wheel_diameter>0.0425</wheel_diameter>
 
             <!--Limits-->
             <max_wheel_torque>200</max_wheel_torque>

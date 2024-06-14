@@ -2,15 +2,15 @@
 <robot name="slambot"
   xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- <xacro:macro name="gazebo_description" params="link">
+  <xacro:macro name="gazebo_description" params="link color">
     <gazebo reference="${link}">
-      <material>Gazebo/White</material>
+      <material>${color}</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
       <self_collide>true</self_collide>
       <gravity>true</gravity>
     </gazebo>
-  </xacro:macro> -->
+  </xacro:macro>
 
   <link name="base_link"/>
 
@@ -49,7 +49,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="base_plate"/> -->
+  <xacro:gazebo_description link="base_plate" color="Gazebo/White"/>
 
   <link name="Top2BottomSupport_v1_1">
     <inertial>
@@ -72,7 +72,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="Top2BottomSupport_v1_1"/> -->
+  <xacro:gazebo_description link="Top2BottomSupport_v1_1" color="Gazebo/Black"/>
 
   <link name="Top2BottomSupport_v1_2">
     <inertial>
@@ -95,7 +95,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="Top2BottomSupport_v1_2"/> -->
+  <xacro:gazebo_description link="Top2BottomSupport_v1_2" color="Gazebo/Black"/>
 
   <link name="Top2BottomSupport_v1_3">
     <inertial>
@@ -118,7 +118,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="Top2BottomSupport_v1_3"/> -->
+  <xacro:gazebo_description link="Top2BottomSupport_v1_3" color="Gazebo/Black"/>
 
   <link name="Top2BottomSupport_v1_4">
     <inertial>
@@ -141,7 +141,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="Top2BottomSupport_v1_4"/> -->
+  <xacro:gazebo_description link="Top2BottomSupport_v1_4" color="Gazebo/Black"/>
 
   <link name="Top_v1_1">
     <inertial>
@@ -164,7 +164,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="Top_v1_1"/> -->
+  <xacro:gazebo_description link="Top_v1_1" color="Gazebo/White"/>
 
   <link name="20V_Battery_Holder_v1_1">
     <inertial>
@@ -187,7 +187,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="20V_Battery_Holder_v1_1"/> -->
+  <xacro:gazebo_description link="20V_Battery_Holder_v1_1" color="Gazebo/Black"/>
 
   <link name="Motor_Bracket_v1_1">
     <inertial>
@@ -210,7 +210,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="Motor_Bracket_v1_1"/> -->
+  <xacro:gazebo_description link="Motor_Bracket_v1_1" color="Gazebo/Black"/>
 
   <link name="Motor_Bracket_v1_2">
     <inertial>
@@ -233,7 +233,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="Motor_Bracket_v1_2"/> -->
+  <xacro:gazebo_description link="Motor_Bracket_v1_2" color="Gazebo/Black"/>
 
   <link name="Motor_GM25-370_v1_1">
     <inertial>
@@ -256,7 +256,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="Motor_GM25-370_v1_1"/> -->
+  <xacro:gazebo_description link="Motor_GM25-370_v1_1" color="Gazebo/Grey"/>
 
   <link name="Motor_GM25-370_v1_2">
     <inertial>
@@ -279,7 +279,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="Motor_GM25-370_v1_2"/> -->
+  <xacro:gazebo_description link="Motor_GM25-370_v1_2" color="Gazebo/Grey"/>
 
   <link name="CastorWheel_Socks_v1_1">
     <inertial>
@@ -302,7 +302,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="CastorWheel_Socks_v1_1"/> -->
+  <xacro:gazebo_description link="CastorWheel_Socks_v1_1" color="Gazebo/Black"/>
 
   <link name="CastorWheel_Socks_v1_2">
     <inertial>
@@ -325,7 +325,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="CastorWheel_Socks_v1_2"/> -->
+  <xacro:gazebo_description link="CastorWheel_Socks_v1_2" color="Gazebo/Black"/>
 
   <link name="Caster-swivel-40mmzzzzzzzzz_assembly_v1_1">
     <inertial>
@@ -348,7 +348,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="Caster-swivel-40mmzzzzzzzzz_assembly_v1_1"/> -->
+  <xacro:gazebo_description link="Caster-swivel-40mmzzzzzzzzz_assembly_v1_1" color="Gazebo/Grey"/>
 
   <link name="Caster-swivel-40mmzzzzzzzzz_assembly_v1_2">
     <inertial>
@@ -371,7 +371,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="Caster-swivel-40mmzzzzzzzzz_assembly_v1_2"/> -->
+  <xacro:gazebo_description link="Caster-swivel-40mmzzzzzzzzz_assembly_v1_2" color="Gazebo/Grey"/>
 
   <link name="RC_coupling_v1_1">
     <inertial>
@@ -394,7 +394,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="RC_coupling_v1_1"/> -->
+  <xacro:gazebo_description link="RC_coupling_v1_1" color="Gazebo/Black"/>
 
   <link name="RC_coupling_v1_2">
     <inertial>
@@ -417,7 +417,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="RC_coupling_v1_2"/> -->
+  <xacro:gazebo_description link="RC_coupling_v1_2" color="Gazebo/Black"/>
 
   <link name="85mm_Wheel_v1_1">
     <inertial>
@@ -440,7 +440,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="85mm_Wheel_v1_1"/> -->
+  <xacro:gazebo_description link="85mm_Wheel_v1_1" color="Gazebo/Black"/>
 
   <link name="85mm_Wheel_v1_2">
     <inertial>
@@ -463,7 +463,7 @@
     </collision>
   </link>
 
-  <!-- <xacro:gazebo_description link="85mm_Wheel_v1_2"/> -->
+  <xacro:gazebo_description link="85mm_Wheel_v1_2" color="Gazebo/Black"/>
 
   <joint name="Rigid 1" type="fixed">
     <origin xyz="-0.061083 -0.088085 0.002998" rpy="0 0 0"/>
@@ -553,7 +553,7 @@
     <origin xyz="0.00725 0.0 0.0" rpy="0 0 0"/>
     <parent link="Motor_GM25-370_v1_1"/>
     <child link="RC_coupling_v1_1"/>
-    <axis xyz="1.0 -0.0 0.0"/>
+    <axis xyz="-1.0 -0.0 0.0"/>
   </joint>
 
   <joint name="Revolute 17" type="continuous">
