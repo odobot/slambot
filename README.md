@@ -33,11 +33,11 @@ The design was made in fusion360 and used a [fusion2urdf](https://github.com/Spa
 To build the packages in this repository follow these steps:
 1. `cd` into an existing or create a new [workspace](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html)
    ```console
-   mkdir -p Bot/src
+   mkdir -p slambot/src
    ```
 2. clone this repository in the `src` folder of your workspace
    ```console
-   cd Bot/src
+   cd slambot/src
    ```
    ```console
    git clone https://github.com/odobot/slambot.git
@@ -59,7 +59,7 @@ To build the packages in this repository follow these steps:
     gedit ~/.bashrc
     ```
     ```console
-    source ~/robotarm/install/setup.bash
+    source ~/slambot/install/setup.bash
     ```
 ## :movie_camera: Rviz
 To view the urdf in rviz open 3 terminals:
